@@ -1,6 +1,6 @@
 //A version of ls that Wang gave in class
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <sys/types.h>
 #include <direct.h>
 #define HERE "."
@@ -29,4 +29,4 @@ void ls(char dirname||){
 		}
 		close(dir_ptr);
 	}
-}
+}*/
