@@ -53,12 +53,12 @@ CMAKE_BINARY_DIR = /home/nick/Documents/Repos/CIS-340-A3/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/myls.c.dir/all
+all: CMakeFiles/main.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/myls.c.dir/clean
+clean: CMakeFiles/main.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/myls.c.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/myls.c.dir/all:
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/depend
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nick/Documents/Repos/CIS-340-A3/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target myls.c"
-.PHONY : CMakeFiles/myls.c.dir/all
+CMakeFiles/main.dir/all:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nick/Documents/Repos/CIS-340-A3/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/myls.c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nick/Documents/Repos/CIS-340-A3/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/myls.c.dir/all
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nick/Documents/Repos/CIS-340-A3/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nick/Documents/Repos/CIS-340-A3/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/myls.c.dir/rule
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-myls.c: CMakeFiles/myls.c.dir/rule
+main: CMakeFiles/main.dir/rule
 
-.PHONY : myls.c
+.PHONY : main
 
 # clean rule for target.
-CMakeFiles/myls.c.dir/clean:
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/clean
-.PHONY : CMakeFiles/myls.c.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

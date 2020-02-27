@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/main.dir/myls.c.o CMakeFiles/main.dir/stringout.c.o  -o main 

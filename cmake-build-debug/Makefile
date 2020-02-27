@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myls.c
+# Target rules for targets named main
 
 # Build rule for target.
-myls.c: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myls.c
-.PHONY : myls.c
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-myls.c/fast:
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/build
-.PHONY : myls.c/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+myls.o: myls.c.o
+
+.PHONY : myls.o
+
+# target to build an object file
+myls.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/myls.c.o
+.PHONY : myls.c.o
+
+myls.i: myls.c.i
+
+.PHONY : myls.i
+
+# target to preprocess a source file
+myls.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/myls.c.i
+.PHONY : myls.c.i
+
+myls.s: myls.c.s
+
+.PHONY : myls.s
+
+# target to generate assembly for a file
+myls.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/myls.c.s
+.PHONY : myls.c.s
 
 stringout.o: stringout.c.o
 
@@ -129,7 +156,7 @@ stringout.o: stringout.c.o
 
 # target to build an object file
 stringout.c.o:
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/stringout.c.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/stringout.c.o
 .PHONY : stringout.c.o
 
 stringout.i: stringout.c.i
@@ -138,7 +165,7 @@ stringout.i: stringout.c.i
 
 # target to preprocess a source file
 stringout.c.i:
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/stringout.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/stringout.c.i
 .PHONY : stringout.c.i
 
 stringout.s: stringout.c.s
@@ -147,7 +174,7 @@ stringout.s: stringout.c.s
 
 # target to generate assembly for a file
 stringout.c.s:
-	$(MAKE) -f CMakeFiles/myls.c.dir/build.make CMakeFiles/myls.c.dir/stringout.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/stringout.c.s
 .PHONY : stringout.c.s
 
 # Help Target
@@ -157,8 +184,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... myls.c"
+	@echo "... main"
 	@echo "... edit_cache"
+	@echo "... myls.o"
+	@echo "... myls.i"
+	@echo "... myls.s"
 	@echo "... stringout.o"
 	@echo "... stringout.i"
 	@echo "... stringout.s"

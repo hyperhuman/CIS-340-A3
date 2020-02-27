@@ -4,4 +4,4 @@ cmake_minimum_required(VERSION 3.10)
 project(CIS340Project2)
 
 # add the executable
-add_executable(myls.c myls.h stringout.c stringout.h)
+add_executable(main myls.c myls.h stringout.c stringout.h)

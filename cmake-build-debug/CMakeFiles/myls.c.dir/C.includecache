@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nick/Documents/Repos/CIS-340-A3/stringout.c
+stringout.h
+/home/nick/Documents/Repos/CIS-340-A3/stringout.h
+
+/home/nick/Documents/Repos/CIS-340-A3/stringout.h
+
