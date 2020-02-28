@@ -5,7 +5,7 @@
 #include <dirent.h>
 #include "stringout.h"
 
-char* mylsFunction(char* dirname[]){
+char* myls(char* dirname[]){
     DIR *dir_ptr; //directory stream
 	struct dirent *directp; //hold one entry
     int size = 0;

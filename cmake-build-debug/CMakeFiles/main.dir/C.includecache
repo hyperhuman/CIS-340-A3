@@ -7,16 +7,20 @@
 #IncludeRegexTransform: 
 
 /home/nick/Documents/Repos/CIS-340-A3/myls.c
+stdlib.h
+-
 myls.h
 /home/nick/Documents/Repos/CIS-340-A3/myls.h
 stdio.h
 -
-
-/home/nick/Documents/Repos/CIS-340-A3/myls.h
-
-/home/nick/Documents/Repos/CIS-340-A3/stringout.c
+string.h
+-
+dirent.h
+-
 stringout.h
 /home/nick/Documents/Repos/CIS-340-A3/stringout.h
+
+/home/nick/Documents/Repos/CIS-340-A3/myls.h
 
 /home/nick/Documents/Repos/CIS-340-A3/stringout.h
 

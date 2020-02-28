@@ -3,6 +3,7 @@
 
 CMakeFiles/main.dir/myls.c.o: ../myls.c
 CMakeFiles/main.dir/myls.c.o: ../myls.h
+CMakeFiles/main.dir/myls.c.o: ../stringout.h
 
 CMakeFiles/main.dir/stringout.c.o: ../stringout.c
 CMakeFiles/main.dir/stringout.c.o: ../stringout.h
