@@ -22,5 +22,15 @@ stringout.h
 
 /home/nick/Documents/Repos/CIS-340-A3/myls.h
 
+/home/nick/Documents/Repos/CIS-340-A3/stringout.c
+stringout.h
+/home/nick/Documents/Repos/CIS-340-A3/stringout.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+
 /home/nick/Documents/Repos/CIS-340-A3/stringout.h
 

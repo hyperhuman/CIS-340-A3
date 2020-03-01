@@ -5,7 +5,7 @@
 #include <dirent.h>
 #include "stringout.h"
 
-const char* myls(char dirname[]){
+const char** myls(char dirname[]){
     char* oneFileBuff = (char *)malloc(sizeof(char)*NAME_MAX);
     char* buffer = (char *)malloc(sizeof(char)*1024);
     int locInBuffer = 0;
@@ -13,7 +13,7 @@ const char* myls(char dirname[]){
     int sizeOfBuffer = 1024;
     int numFiles = 0;
     DIR *dir_ptr;
-    const char *sa = (char *)malloc(sizeof(char*)*1024);
+    const char **sa;
     struct dirent *directp;
     if((dir_ptr = opendir(dirname)) == NULL){
         printf("Cannot open specified directory\n");
@@ -29,13 +29,11 @@ const char* myls(char dirname[]){
             for(int i=0; i<size;i++){
                 buffer[(locInBuffer+i)] = oneFileBuff[i];
             }
-            sa[numFiles];
+            sa[numFiles] = &buffer[locInBuffer];
             numFiles++;
             locInBuffer += (size+1);
             strcat(buffer, "\0");
         }
-        printf("%s\n", buffer);
-        printf("%c\n", buffer[25]);
         closedir(dir_ptr);
         return sa;
     }
@@ -46,11 +44,10 @@ int main(int argc, char* argv[]){
         printf("Too many arguments given\n");
         exit(0);
     }else if(argc == 3){
-        //do thing
+        //do
     }else if(argc == 2){
         if((strncmp(argv[1], "-f", 2) == 0) || (strncmp(argv[1], "-b", 2) == 0)){
-            myls(".");
-            printf("Use current directory but reorder it\n");
+            stringout(myls("."), argv[1]);
         }else{
             myls(argv[1]);
         }

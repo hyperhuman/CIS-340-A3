@@ -10,7 +10,7 @@ void stringout(char* list[], char* flag){
     int *temp[] = (int*)malloc(sizeof(list));
     temp[0] = 0;
     while(list[i+1] != '\0'){
-        if(list[i] = NULL && list[i+1] != NULL){
+        if(list[i] == NULL && list[i+1] != NULL){
             temp[j] = i + 1;
             j = j + 1;
             i = i + 1;
