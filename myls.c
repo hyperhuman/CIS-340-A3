@@ -5,47 +5,56 @@
 #include <dirent.h>
 #include "stringout.h"
 
-char* myls(char* dirname[]){
-    DIR *dir_ptr; //directory stream
-	struct dirent *directp; //hold one entry
-    int size = 0;
-    while((directp = readdir(dirname)) != NULL){
-            size = size + 1;
+const char* myls(char dirname[]){
+    char* oneFileBuff = (char *)malloc(sizeof(char)*NAME_MAX);
+    char* buffer = (char *)malloc(sizeof(char)*1024);
+    int locInBuffer = 0;
+    int size;
+    int sizeOfBuffer = 1024;
+    int numFiles = 0;
+    DIR *dir_ptr;
+    const char *sa = (char *)malloc(sizeof(char*)*1024);
+    struct dirent *directp;
+    if((dir_ptr = opendir(dirname)) == NULL){
+        printf("Cannot open specified directory\n");
+        exit(0);
+    }else{
+        while((directp = readdir(dir_ptr)) != NULL){
+            oneFileBuff = directp->d_name;
+            size = strlen(oneFileBuff);
+            if(locInBuffer+size > 1023){
+                sizeOfBuffer += 1024;
+                char* buffer = realloc(buffer, sizeOfBuffer);
+            }
+            for(int i=0; i<size;i++){
+                buffer[(locInBuffer+i)] = oneFileBuff[i];
+            }
+            sa[numFiles];
+            numFiles++;
+            locInBuffer += (size+1);
+            strcat(buffer, "\0");
         }
-    char* files[size];
-    rewinddir(dir_ptr);
-	if((dir_ptr  = opendir(dirname)) == NULL){
-		printf("Cannot open %s\n", dirname);
-        return dirname;
-	}else{
-        int i = 0;
-		while((directp = readdir(dirname)) != NULL){
-           files[i] = (char*)malloc(sizeof(directp->d_name) + 1);
-           strncpy(files[size], directp->d_name, directp->d_namlen);
-           strcat(files[size], '\0');
-           i = i + 1;
-           if(i == size){
-               break;
-           }
-		}
-		close(dir_ptr);
-	}
-    return files;
+        printf("%s\n", buffer);
+        printf("%c\n", buffer[25]);
+        closedir(dir_ptr);
+        return sa;
+    }
 }
 
 int main(int argc, char* argv[]){
-    if(argc <= 0){
-        printf("Error no directory provided.");
-        exit;
-    }
-    if(argc == 1){
-        stringout(myls(argv[0]), '\0');
-    }
-    if(argc == 2){
-        stringout(myls(argv[0]), argv[1]);
-    }
-    if(argc > 2){
-        printf("Too many arguments given.");
-        exit;
+    if(argc > 3){
+        printf("Too many arguments given\n");
+        exit(0);
+    }else if(argc == 3){
+        //do thing
+    }else if(argc == 2){
+        if((strncmp(argv[1], "-f", 2) == 0) || (strncmp(argv[1], "-b", 2) == 0)){
+            myls(".");
+            printf("Use current directory but reorder it\n");
+        }else{
+            myls(argv[1]);
+        }
+    }else{
+        myls(".");
     }
 }
