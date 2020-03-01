@@ -13,7 +13,7 @@ const char** myls(char dirname[]){
     int sizeOfBuffer = 1024;
     int numFiles = 0;
     DIR *dir_ptr;
-    const char **sa;
+    const char ** sa = malloc(sizeof(char *)*1024);
     struct dirent *directp;
     if((dir_ptr = opendir(dirname)) == NULL){
         printf("Cannot open specified directory\n");
@@ -52,6 +52,6 @@ int main(int argc, char* argv[]){
             myls(argv[1]);
         }
     }else{
-        myls(".");
+        stringout(myls("."), argv[1]);
     }
 }
