@@ -1,56 +1,36 @@
 #include "stringout.h"
-#include <stdio.h>
 #include <string.h>
+#include <dirent.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-void stringout(char* list[], char* flag){
-    int i = 0;
-    int j = 1;
-    int size, store;
-    int *temp[] = (int*)malloc(sizeof(list));
-    temp[0] = 0;
-    while(list[i+1] != '\0'){
-        if(list[i] == NULL && list[i+1] != NULL){
-            temp[j] = i + 1;
-            j = j + 1;
-            i = i + 1;
+void stringout(const char* string[], const char *flag){
+    if(strcmp(flag, "\0") == 0){
+        int i =0;
+        while(string[i] != NULL){
+            printf("%s\n",string[i]);
+            i++;
         }
-        while(list[i] != '\0'){
-            i = i + 1;
-        }
-    }
-    size = j;
-    if(flag == "-f"){
-        for(i = 0; i < size; i = i + 1){
-            for(j = 0; j < size - 1; j = j + 1){
-                if(strcmp(list[temp[j]], list[temp[j+1]]) > 0){
-                    store = temp[j];
-                    temp[j] = temp[j+1];
-                    temp[j+1] = store;
+    }else if(strcmp(flag, "-f") == 0){
+        int i =0;
+        int j=0;
+        const char* temp = malloc(sizeof(char *));
+        while(string[i] != NULL){
+            j=i;
+            while(string[j] != NULL && string[j+1] != NULL){
+                if(strcmp(string[j], string[j+1]) > 0){
+                    temp = string[j];
+                    string[j] = string[j+1];
+                    string[j+1] = temp;
                 }
+                j++;
             }
+            i++;
         }
-        for(i = 0; i < size; i = i + 1){
-            printf("%s", list[temp[i]]);
-        }
-    }
-    else if(flag == "-b"){
-        for(i = 0; i < size; i = i + 1){
-            for(j = 0; j < size - 1; j = j + 1){
-                if(strcmp(list[temp[j]], list[temp[j+1]]) < 0){
-                    store = temp[j];
-                    temp[j] = temp[j+1];
-                    temp[j+1] = store;
-                }
-            }
-        }
-        for(i = 0; i < size; i = i + 1){
-            printf("%s", list[temp[i]]);
-        }
-    }
-    else{
-        for(i = 0; i < size; i = i + 1){
-            printf("%s", list[temp[i]]);
+        i = 0;
+        while(string[i] != NULL){
+            printf("%s\n",string[i]);
+            i++;
         }
     }
 }
