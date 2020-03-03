@@ -25,7 +25,8 @@ const char** myls(char dirname[]){
                 size = strlen(oneFileBuff);
                 if (locInBuffer + size > 1023) { //if buffer is too small to store the string, realloc another KB
                     sizeOfBuffer += 1024;
-                    char *buffer = (char *)realloc(buffer, sizeOfBuffer);
+                    char *newBuffer = (char *)realloc(buffer, sizeOfBuffer);
+                    buffer = newBuffer;
                 } 
                 for (int i = 0; i < size; i++) { //place the string in the buffer
                     buffer[(locInBuffer + i)] = oneFileBuff[i];
