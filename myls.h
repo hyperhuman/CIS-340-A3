@@ -1,4 +1,7 @@
-#ifndef CIS_340_A3_MYLS_H
-#define CIS_340_A3_MYLS_H
+#ifndef MYLS_H
+#define MYLS_H
 
-#endif //CIS_340_A3_MYLS_H
+const char** myls(char* dirname);
+
+
+#endif

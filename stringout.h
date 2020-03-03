@@ -1,4 +1,6 @@
-#ifndef CIS_340_A3_STRINGOUT_H
-#define CIS_340_A3_STRINGOUT_H
+#ifndef STRINGOUT_H
+#define STRINGOUT_H
 
-#endif //CIS_340_A3_STRINGOUT_H
+void stringout(const char* string[], const char* flag);
+
+#endif
