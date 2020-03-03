@@ -14,7 +14,7 @@ const char** myls(char dirname[]){
     int numFiles = 0;
     DIR *dir_ptr;
     const char ** sa = malloc(sizeof(char *)*1024); //array of pointers to locations in the buffer of strings
-    struct dirent *directp; //Hi Christen! :)
+    struct dirent *directp;
     if((dir_ptr = opendir(dirname)) == NULL){ //error case: bad directory
         printf("Cannot open specified directory\n");
         exit(0);
